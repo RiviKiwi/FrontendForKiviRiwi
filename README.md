@@ -1,3 +1,6 @@
-# Frontend for RiviKiwiApp
+# Frontend для RiviKiwiApp
 ---
-Modern design interface for marketplace **RiviKiwi**
+Современный интерфейс для торговой площадки **RiviKiwi**
+
+TODO:
+- Переделать интерфейс под размеры сделанного макета из Figma
