@@ -3,7 +3,6 @@
   --bg-color: #fffcf2;      /* Кремовый фон */
   --green: #90C825;         /* Салатовый цвет */
   --brown: #574231;
-  --dark-text: #333333;
   --borders-color: #F0EBE5;
   --black-color: #2D2C28;
 }
@@ -18,7 +17,13 @@ body {
 .site-header {
   background-color: var(--bg-color);
 }
-
+.container {
+  width: 100%;             /* По умолчанию ширина 100% (для мобилок) */
+  max-width: 1200px;       /* Максимальная ширина (стандарт: 1140px, 1200px или 1440px) */
+  margin: 0 auto;          /* Магия: 0 сверху/снизу, AUTO слева/справа (центрует блок) */
+  padding: 0 20px;         /* "Подушка безопасности", чтобы текст не прилипал к краям экрана на телефоне */
+  box-sizing: border-box;  /* Чтобы padding не увеличивал ширину */
+}
 /* --- ВЕРХНИЙ ЭТАЖ --- */
 .header-top {
   display: flex;             /* Выстраиваем в ряд */
@@ -60,12 +65,13 @@ body {
   font-size: 16px;
   margin: 0 10px;
 }
-
+.search-placeholder {
+  color:var(--brown) 50%;
+}
 .location {
   font-size: 14px;
-  color: #666;
+  color:var(--brown) ;
   padding-right: 15px;
-  border-right: 1px solid #eee; /* Разделитель перед кнопкой */
   margin-right: 10px;
   cursor: pointer;
 }
@@ -101,8 +107,12 @@ body {
 /* Прозрачная кнопка с рамкой */
 .btn-outline {
   background: transparent;
-  border: 2px solid #5A4A42; /* Темно-коричневый цвет */
-  color: #5A4A42;
+  border: 2px solid var(--brown); /* Темно-коричневый цвет */
+  color: var(--brown);
+}
+.btn-outline:hover {
+  background-color: var(--brown);
+  color: var(white);
 }
 
 /* Зеленая кнопка */
@@ -123,7 +133,7 @@ body {
   display: flex;
   align-items: center;
   padding: 0 20px;
-  gap: 15px;
+  gap: 10px;
 }
 .categories-wrapper {
   width: 100%;        /* Растягиваем фон */
@@ -138,24 +148,27 @@ body {
 
 .cat-link {
   text-decoration: none;
-  color: #333;
+  color: var(--brown);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
-  background-color: #F5F3EF; /* Цвет неактивной кнопки */
+  font-weight: bold;
+  background-color: var(--bg-color); /* Цвет неактивной кнопки */
+  border: 1px solid var(--borders-color);
   white-space: nowrap;       /* Текст не переносится */
   transition: 0.2s;
 }
 
-.cat-link:hover {
-  background-color: #e0e0e0;
-}
+
 
 .cat-link.active {
   background-color: #333;
   color: white;
 }
-
+.cat-link:hover {
+  background-color: var(--green);
+  color:white;
+}
 main {
   flex-grow: 1; /* "Займи всё свободное пространство, которое осталось" */
 }
