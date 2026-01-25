@@ -3,8 +3,8 @@ const passwordFields = document.querySelectorAll('.password-field');
 passwordFields.forEach(field => {
   const passwordInput = field.querySelector('input');
   const eyeIcon = field.querySelector('.eye img');
-  
-  if (passwordInput && eyeIcon) {
+  const avatarIcon = document.querySelector('.avatar img');
+  if (passwordInput && eyeIcon && avatarIcon) {
     eyeIcon.addEventListener('click', () => {
       const isHidden = passwordInput.type === 'password';
       
@@ -12,6 +12,9 @@ passwordFields.forEach(field => {
       eyeIcon.src = isHidden
         ? 'assets/images/icons/opened-eye.svg'
         : 'assets/images/icons/closed-eye.svg';
+      avatarIcon.src = isHidden
+        ? 'assets/images/icons/bird-open-svg.svg'
+        : 'assets/images/icons/bird-log.svg';
     });
   }
 });
