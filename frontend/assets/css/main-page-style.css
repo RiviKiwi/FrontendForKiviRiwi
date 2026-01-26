@@ -179,6 +179,14 @@ input::placeholder {
 }
 .btn-primary:hover { opacity: 0.8; }
 
+.accept {
+  display: flex;
+  justify-content: center;
+}
+.accept button {
+  width: 100%;
+  justify-content: center;
+}
 .header-bottom {
   border-top: 1px solid var(--border-color);
   background-color: white;
