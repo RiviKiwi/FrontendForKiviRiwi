@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы — RiviKiwi</title>
+
+  <link rel="stylesheet" href="assets/css/main-page-style.css">
+  <link rel="stylesheet" href="assets/css/reviews.css">
+</head>
+<body>
+
+<!-- ===== HEADER (как везде) ===== -->
+<header class="site-header">
+  <div class="container header-top">
+
+    <a href="index.html" class="logo">
+      <span class="logo-text">Rivi<span class="green-text">Kiwi</span></span>
+    </a>
+
+    <div class="search-bar">
+      <img src="assets/images/icons/search-icon.svg">
+      <input type="text" placeholder="Что вы ищете?">
+      <button class="btn-search">Найти</button>
+    </div>
+
+    <div class="header-actions">
+      <a href="profile.html" class="btn btn-primary">Профиль</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main class="container reviews-page">
+
+  <!-- ===== TABS ===== -->
+  <div class="reviews-tabs">
+    <button class="tab active" data-tab="all">Все отзывы</button>
+    <button class="tab" data-tab="my">Мои отзывы</button>
+  </div>
+
+
+  <!-- ===== WRITE REVIEW ===== -->
+  <div class="write-review-card">
+
+  <h3>Написать отзыв</h3>
+
+  <!-- Выбор рейтинга -->
+  <div class="rating-select">
+    <span class="star" data-value="1">★</span>
+    <span class="star" data-value="2">★</span>
+    <span class="star" data-value="3">★</span>
+    <span class="star" data-value="4">★</span>
+    <span class="star" data-value="5">★</span>
+  </div>
+
+  <!-- Скрытое поле с оценкой -->
+  <input type="hidden" id="ratingValue" value="0">
+
+  <!-- Текст отзыва -->
+  <textarea
+    class="review-textarea"
+    placeholder="Поделитесь впечатлениями о продавце..."
+  ></textarea>
+
+  <!-- Кнопка -->
+  <button class="btn btn-primary submit-review-btn">
+    Отправить отзыв
+  </button>
+
+</div>
+
+
+  <!-- ===== REVIEWS LIST ===== -->
+  <div class="reviews-list">
+
+    <!-- ОТЗЫВ 1 -->
+    <div class="review-card">
+      <div class="review-header">
+        <img src="assets/images/users/ava.png" class="review-avatar">
+        <div>
+          <div class="review-name">Алексей Иванов</div>
+          <div class="review-meta">⭐ 5 · 12 января 2024</div>
+        </div>
+      </div>
+
+      <p class="review-text">
+        Отличный продавец! Быстро ответил, всё честно,
+        товар полностью соответствует описанию.
+        Рекомендую 👍
+      </p>
+    </div>
+
+    <!-- ОТЗЫВ 2 (МОЙ) -->
+    <div class="review-card my-review">
+      <div class="review-header">
+        <img src="assets/images/users/ava.png" class="review-avatar">
+        <div>
+          <div class="review-name">Вы</div>
+          <div class="review-meta">⭐ 4 · 3 февраля 2024</div>
+        </div>
+      </div>
+
+      <p class="review-text">
+        Покупкой доволен. Продавец вежливый,
+        немного задержался с ответом, но в целом всё ок.
+      </p>
+    </div>
+
+    <!-- ОТЗЫВ 3 -->
+    <div class="review-card">
+      <div class="review-header">
+        <img src="assets/images/users/ava.png" class="review-avatar">
+        <div>
+          <div class="review-name">Мария К.</div>
+          <div class="review-meta">⭐ 5 · 20 февраля 2024</div>
+        </div>
+      </div>
+
+      <p class="review-text">
+        Всё супер! Быстрая сделка, товар в отличном состоянии.
+        Спасибо!
+      </p>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="assets/js/reviews.js"></script>
+
+</body>
+</html>

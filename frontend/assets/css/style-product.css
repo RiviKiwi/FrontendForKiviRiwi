@@ -332,3 +332,8 @@ input::placeholder {
 .link {
   color:#90C825;
 }
+
+/*For Links in reviews*/
+.review-link {
+  color:#777;
+}

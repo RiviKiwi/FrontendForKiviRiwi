@@ -1,0 +1,16 @@
+.rating-select {
+  display: flex;
+  gap: 6px;
+  font-size: 26px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.rating-select .star {
+  color: #dcdcdc;
+  transition: color 0.2s;
+}
+
+.rating-select .star.active {
+  color: #90C825; /* твой зелёный */
+}

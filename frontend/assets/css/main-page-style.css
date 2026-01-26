@@ -631,3 +631,111 @@ input::placeholder {
   height: 100%;
   object-fit: cover;
 }
+
+
+/* ===== REVIEWS PAGE ===== */
+.reviews-page {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  max-width: 800px;
+}
+
+/* TABS */
+.reviews-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab.active {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+/* WRITE REVIEW */
+.write-review-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  border: 2px solid var(--border-color);
+  margin-bottom: 30px;
+}
+
+.write-review-card textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  resize: none;
+  font-family: inherit;
+}
+
+.rating-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stars {
+  font-size: 22px;
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* REVIEW CARD */
+.review-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  border: 2px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.review-card.my-review {
+  border-color: var(--green);
+}
+
+.review-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-name {
+  font-weight: 600;
+}
+
+.review-meta {
+  font-size: 13px;
+  color: #777;
+}
+
+.review-text {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+/*For Links in reviews*/
+.review-link {
+  color:#777;
+}
