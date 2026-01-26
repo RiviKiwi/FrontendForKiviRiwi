@@ -114,16 +114,23 @@
             <aside class="sidebar">
                 <div class="filter price-filter">
                     <h3>Цена</h3>
-                    <div class="price-inputs">
-                        <input type="number" placeholder="От">
-                        <input type="number" placeholder="До">
+                    
+                    <div class="input-block price-inputs">
+                        <input type="number" min="0" id="price-from" placeholder="От" oninput="this.value = Math.abs(this.value)" 
+    onkeydown="return event.key !== '-'">
+                        <input type="number" min="0" id="price-to" placeholder="До" oninput="this.value = Math.abs(this.value)" 
+    onkeydown="return event.key !== '-'">
                     </div>
                 </div>
                 <div class="filter">
-                    <h3>Какой то фильтр</h3>
-                    <div class="price-inputs">
-                        <input type="number" placeholder="От">
-                        <input type="number" placeholder="До">
+                    <h3>Рейтинг</h3>
+                    <div class="input-block rating-input">
+                        <input type="number" min="0" max="5" step="0.1" id="price-from" placeholder="Минимальный рейтинг: 0" onkeydown="return event.key !== '-'">
+                    </div>
+                </div>
+                <div class="filter">
+                    <div class="has-discount">
+                    <h3>Есть скидка</h3><input type="checkbox">
                     </div>
                 </div>
             </aside>

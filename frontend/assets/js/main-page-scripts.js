@@ -70,3 +70,13 @@ window.onclick = function(event) {
 }
 }
 
+const fromInput = document.getElementById('price-from');
+const toInput = document.getElementById('price-to');
+
+fromInput.addEventListener('input', function() {
+    toInput.min = this.value;
+    
+    if (toInput.value && parseFloat(toInput.value) < parseFloat(this.value)) {
+        toInput.value = this.value; 
+    }
+});

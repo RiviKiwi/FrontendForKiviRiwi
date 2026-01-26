@@ -329,16 +329,21 @@ input::placeholder {
   margin-top: 0;
   margin-bottom: 7px;
 }
-
-.price-inputs {
+.input-block {
   display: flex;
   align-items: center;
   border: 1px solid var(--border-color); 
   border-radius: 8px;     
   background: white;
-  overflow: hidden;       
+  overflow: hidden;     
 }
-
+.input-block input{
+  border: none;           
+  outline: none;          
+  padding: 10px 15px;
+  width: 100%;             
+  font-size: 14px;    
+}
 .price-inputs input {
   border: none;           
   outline: none;          
@@ -350,7 +355,12 @@ input::placeholder {
 .price-inputs input:first-child {
   border-right: 1px solid var(--border-color);
 }
-
+.has-discount input[type="checkbox"]{
+  width: 15px;
+  height:15px;
+  cursor:pointer;
+  accent-color:var(--green);
+}
 /* Контент справа */
 .content-area {
   flex-grow: 1;
