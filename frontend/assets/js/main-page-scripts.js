@@ -80,3 +80,14 @@ fromInput.addEventListener('input', function() {
         toInput.value = this.value; 
     }
 });
+
+function markFavorite(button,event) {
+    button.classList.toggle('favorite-product');
+    event.preventDefault();
+    event.stopPropagation();
+    if (button.classList.contains('favorite-product')) {
+        console.log("Добавлено в избранное");
+    } else {
+        console.log("Удалено из избранного");
+    }
+}

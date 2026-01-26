@@ -25,7 +25,7 @@
                 <!-- Поиск -->
                 <div class="search-bar">
                     <img src="assets/images/icons/search-icon.svg">
-                    <input type="text" placeholder="Что вы ищете?">
+                    <input type="text" placeholder="Что вы ищете?" id="search-bar">
                     <div class="location-wrapper">
                         <div class="location" onclick="toggleCityMenu()" style="cursor: pointer;">
                             <span class="location-icon"><svg width="13" height="17" viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,12 +125,12 @@
                 <div class="filter">
                     <h3>Рейтинг</h3>
                     <div class="input-block rating-input">
-                        <input type="number" min="0" max="5" step="0.1" id="price-from" placeholder="Минимальный рейтинг: 0" onkeydown="return event.key !== '-'">
+                        <input type="number" min="0" max="5" step="0.1" id="min-rating" placeholder="Минимальный рейтинг: 0" onkeydown="return event.key !== '-'">
                     </div>
                 </div>
                 <div class="filter">
                     <div class="has-discount">
-                    <h3>Есть скидка</h3><input type="checkbox">
+                    <h3>Есть скидка</h3><input type="checkbox" id="check-has-discount">
                     </div>
                 </div>
                 <div class="accept">
@@ -161,9 +161,16 @@
                     <!-- !ПОСЛЕДНИЕ ИЗМЕНЕНИЯ! -->
                     <!-- Карточка 1 -->
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
@@ -173,9 +180,16 @@
                     </a>
                     <!-- Карточка 2 -->
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
@@ -185,9 +199,16 @@
                     </a>
                     <!-- Карточка 3 -->
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
@@ -197,9 +218,16 @@
                     </a>
                     <!-- Карточка 4 -->
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
@@ -208,9 +236,16 @@
                         </div>
                     </a>
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
@@ -219,9 +254,16 @@
                         </div>
                     </a>
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
@@ -230,9 +272,16 @@
                         </div>
                     </a>
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
@@ -241,9 +290,16 @@
                         </div>
                     </a>
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
@@ -252,9 +308,16 @@
                         </div>
                     </a>
                     <a href="#" class="product-card">
-                        <div class="image-placeholder gradient-green"><img src="assets/images/log-background.svg"></div>
+                        <div class="image-placeholder gradient-green">
+                            <img src="assets/images/log-background.svg">
+                        </div>
                         <div class="card-info">
-                            <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                            <div class="card-header">
+                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></button>
+                            </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-location">
                                 <img src="assets/images/icons/location-pin-icon.svg" height="15px" width="15px">
