@@ -328,3 +328,7 @@ input::placeholder {
   font-size: 14px;
   color: #777;
 }
+
+.link {
+  color:#90C825;
+}
