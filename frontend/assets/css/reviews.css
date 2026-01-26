@@ -14,3 +14,11 @@
 .rating-select .star.active {
   color: #90C825; /* твой зелёный */
 }
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  gap:3px;
+}
