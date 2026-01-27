@@ -775,3 +775,50 @@ input::placeholder {
 .review-link {
   color:#777;
 }
+
+/* ===== PAGINATION ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.page-btn {
+  min-width: 42px;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: white;
+  color: var(--dark);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.page-btn:hover {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+.page-btn.active {
+  background: var(--dark);
+  color: white;
+  border-color: var(--dark);
+  cursor: default;
+}
+
+.page-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-dots {
+  padding: 0 5px;
+  font-weight: 600;
+  color: var(--transparent-brown);
+}
