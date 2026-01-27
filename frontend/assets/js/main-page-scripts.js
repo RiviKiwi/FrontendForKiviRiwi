@@ -1,10 +1,18 @@
 /* Местоположение */
-function toggleCityMenu() {
+function toggleCityMenu(event) {
+    if (event) {
+        event.preventDefault(); 
+        event.stopPropagation(); 
+    }
     const dropdown = document.getElementById('cityDropdown');
     dropdown.classList.toggle('show');
 }
 
-function selectCity(cityName) {
+function selectCity(cityName,event) {
+    if (event) {
+        event.preventDefault(); 
+        event.stopPropagation(); 
+    }
     document.querySelector('.current-city').innerText = cityName;
     document.getElementById('cityDropdown').classList.remove('show');
 }
@@ -12,7 +20,7 @@ function selectCity(cityName) {
 window.onclick = function(event) {
     if (!event.target.closest('.location-wrapper')) {
       const dropdown = document.getElementById('cityDropdown');
-      if (dropdown.classList.contains('show')) {
+      if (dropdown && dropdown.classList.contains('show')) {
         dropdown.classList.remove('show');
       }
     }
