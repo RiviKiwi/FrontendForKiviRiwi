@@ -786,17 +786,23 @@ input::placeholder {
 }
 
 .page-btn {
-  min-width: 42px;
+  width: 42px;
   height: 42px;
-  padding: 0 14px;
+
   border-radius: 50%;
   border: 1px solid var(--border-color);
   background: white;
   color: var(--dark);
+
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .page-btn:hover {
