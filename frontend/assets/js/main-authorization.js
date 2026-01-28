@@ -18,16 +18,3 @@ passwordFields.forEach(field => {
     });
   }
 });
-
-const form = document.getElementById('password-change-form');
-const modal = document.getElementById('success-modal');
-
-if (form && modal) {
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    modal.classList.add('active');
-    setTimeout(() => {
-      window.location.href = 'self-profile.html';
-    }, 2000);
-  });
-}

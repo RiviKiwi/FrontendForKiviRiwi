@@ -2,7 +2,6 @@
   box-sizing: border-box;
   --green: #90C825; 
   --border-color: #F0EBE5;
-  --dark: #2D2C28;
   font-family: 'Inter', sans-serif;
 }
 
@@ -148,68 +147,4 @@ input:focus {
 
 .link {
     color:var(--green);
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-card {
-  background: white;
-  padding: 30px 50px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-  font-family: sans-serif;
-}
-
-.modal-overlay.active .modal-card {
-  transform: translateY(0);
-}
-
-.icon-circle {
-  width: 60px;
-  height: 60px;
-  background-color: var(--green);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px;
-}
-
-.icon-circle svg {
-  width: 32px;
-  height: 32px;
-}
-
-.modal-card h3 {
-  margin: 0 0 10px;
-  color: var(--dark);
-}
-
-.modal-card p {
-  margin: 0;
-  color: #666;
 }
