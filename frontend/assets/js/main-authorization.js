@@ -4,7 +4,7 @@ passwordFields.forEach(field => {
   const passwordInput = field.querySelector('input');
   const eyeIcon = field.querySelector('.eye img');
   const avatarIcon = document.querySelector('.avatar img');
-  if (passwordInput && eyeIcon && avatarIcon) {
+  if (passwordInput && eyeIcon) {
     eyeIcon.addEventListener('click', () => {
       const isHidden = passwordInput.type === 'password';
       
