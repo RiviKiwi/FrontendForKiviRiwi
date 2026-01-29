@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создать объявление — RiviKiwi</title>
+
+  <link rel="stylesheet" href="assets/css/main-page-style.css">
+  <link rel="stylesheet" href="assets/css/create-ad.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-top">
+
+    <a href="index.html" class="logo">
+      <span class="logo-text">Rivi<span class="green-text">Kiwi</span></span>
+    </a>
+
+    <div class="header-actions">
+      <a href="self-profile.html" class="btn btn-primary">Профиль</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main class="container create-ad-page">
+
+  <h1 class="page-title">Создание объявления</h1>
+
+  <form class="create-ad-form">
+
+    <label>
+      Название
+      <input type="text" placeholder="Введите название товара" required>
+    </label>
+
+    <label>
+      Url
+      <input type="text" placeholder="primer-nazvaniya">
+    </label>
+
+    <label>
+      Категория
+      <select>
+        <option>Одежда</option>
+        <option>Электроника</option>
+        <option>Авто и запчасти</option>
+        <option>Недвижимость</option>
+        <option>Дом и сад</option>
+        <option>Услуги</option>
+        <option>Хобби</option>
+      </select>
+    </label>
+
+    <label>
+      Описание
+      <textarea rows="5" placeholder="Опишите товар подробно"></textarea>
+    </label>
+
+    <!-- ===== IMAGES ===== -->
+    <div class="image-upload">
+      <span class="upload-title">Фотографии</span>
+
+      <label class="upload-box">
+        <input type="file" id="imageInput" multiple accept="image/*">
+        <span>➕ Добавить фото</span>
+      </label>
+
+      <div class="image-preview" id="imagePreview"></div>
+    </div>
+
+    <label>
+      Цена
+      <input type="number" placeholder="0.00">
+    </label>
+
+    <label>
+      Скидка
+      <input type="number" placeholder="0">
+    </label>
+
+    <label class="user-select">
+        Пользователь
+
+        <div class="user-row">
+            <select>
+                <option>Артем</option>
+            </select>
+
+            <a href="login.html" class="add-user-btn">
+                + Добавить аккаунт
+            </a>
+        </div>
+    </label>
+
+
+    <label>
+      Город
+      <select>
+        <option>Минск</option>
+        <option>Гродно</option>
+        <option>Брест</option>
+        <option>Гомель</option>
+        <option>Витебск</option>
+        <option>Могилев</option>
+      </select>
+    </label>
+
+    <button type="submit" class="btn btn-primary btn-submit">
+      Опубликовать объявление
+    </button>
+
+  </form>
+
+</main>
+
+<script src="assets/js/create-ad.js"></script>
+</body>
+</html>

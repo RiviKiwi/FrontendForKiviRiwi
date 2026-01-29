@@ -828,3 +828,7 @@ input::placeholder {
   font-weight: 600;
   color: var(--transparent-brown);
 }
+
+.create-ad-link {
+  color:#2D2C28;
+}
