@@ -58,3 +58,16 @@
 .delete-btn:hover {
   background: #efcaca;
 }
+
+.review-text-area {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+}
