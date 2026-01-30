@@ -168,6 +168,13 @@ input::placeholder {
   color: white;
   fill: white;
 }
+.btn-outline a {
+  color: var(--text-brown);
+  text-decoration: none;
+}
+.btn-outline:hover a {
+  color: white;
+}
 .btn-primary {
   background: var(--green);
   border: none;
