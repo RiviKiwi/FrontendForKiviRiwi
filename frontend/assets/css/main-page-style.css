@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #FFFCF2;       /* Кремовый фон */
+  --bg-color: #fffdf7;       /* Кремовый фон */
   --green: #90C825;          /* Лаймовый зеленый киви */
   --dark: #2D2C28;     /* Темный цвет для текста и футера */
   --text-brown: #574231;      /* Коричневый цвет */
@@ -537,50 +537,111 @@ input::placeholder {
   word-break: break-word;
   color: var(--text-brown);
 }
-/* --- FOOTER --- */
-.site-footer {
-  margin-top: auto;
-  background-color: var(--dark);
-  color: #bbb;
-  padding: 60px 0;
-  width: 100%;
+/* --- FOOTER FIX --- */
+.footer {
+    padding: 60px 0;
+    background-color: var(--dark);
+    color: white;
+    margin-top: auto; /* Прижимает футер к низу, если контента мало */
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
+/* Сетка футера */
+.footer .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
-.footer-col {
-  flex: 1;
+/* Логотип в футере (отдельный класс, чтобы не конфликтовал с хедером) */
+.logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
-.footer-logo {
-  color: white;
-  margin-bottom: 15px;
+.logo-text-footer {
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
 }
 
-.footer-desc {
-  font-size: 13px;
-  line-height: 1.5;
-  max-width: 300px;
+/* Заголовки колонок */
+.footer-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 
-.footer-col h3 {
-  color: white;
-  margin-top: 0;
-  margin-bottom: 20px;
+/* Ссылки */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.footer-col a {
-  display: block;
-  color: #bbb;
-  text-decoration: none;
-  margin-bottom: 10px;
-  font-size: 14px;
+.footer-links li a {
+    color: #a8a29e; /* Светло-серый (Slate-400) */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
 }
-.footer-col a:hover { color: white; }
+
+.footer-links li a:hover {
+    color: var(--green);
+}
+
+/* Копирайт */
+.footer-copy {
+    color: #a8a29e;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Соцсети */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #a8a29e;
+    transition: color 0.2s;
+}
+
+.social-icon:hover {
+    color: var(--green);
+}
+
+/* Иконки Lucide в футере */
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Адаптив для футера */
+@media (max-width: 768px) {
+    .footer .grid-4 {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .logo-footer {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
 
 /* ===== PROFILE PAGE ===== */
 .profile-page {
