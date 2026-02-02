@@ -511,7 +511,7 @@ input::placeholder {
   justify-content: space-between;
   padding: 10px 15px;
   border-top: 1px solid var(--border-color);
-  height: 85px; 
+  height: 92px; 
   color: var(--dark);
 }
 
@@ -529,13 +529,41 @@ input::placeholder {
 .product-price {
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 .product-location {
+  display:flex;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 14px;
+  color: var(--text-brown);
+  white-space: nowrap;     
+  overflow: hidden;        
+  text-overflow: ellipsis; 
+  flex-grow: 1;            
+  min-width: 0;    
+}
+.product-bottom-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  gap: 10px;
+}
+.product-views {
   margin-top: 5px;
   display: flex;
+  gap:3px;
+  align-items: center;
   font-size:14px;
   word-break: break-word;
-  color: var(--text-brown);
+  color: var(--transparent-brown);
+  flex-shrink: 0;
+  white-space: nowrap;  
+}
+.product-views p{
+  margin: 0;
 }
 /* --- FOOTER FIX --- */
 .footer {

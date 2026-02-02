@@ -99,3 +99,16 @@ function markFavorite(button,event) {
         console.log("Удалено из избранного");
     }
 }
+
+const viewElements = document.querySelectorAll('.product-views p');
+const formatter = new Intl.NumberFormat('en-US', {
+notation: "compact",
+maximumFractionDigits: 1
+});
+
+viewElements.forEach(el => {
+const originalValue = parseInt(el.textContent.replace(/\s/g, ''));
+if (!isNaN(originalValue)) {
+    el.textContent = formatter.format(originalValue).toLowerCase(); 
+}
+});
