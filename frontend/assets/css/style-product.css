@@ -178,7 +178,7 @@ input::placeholder {
 }
 .btn-primary {
   background: var(--green);
-  border: none;
+  border: 2px solid transparent;
   stroke:white;
   color: white;
 }
@@ -190,9 +190,16 @@ input::placeholder {
   font-size: 16px;
   padding: 15px 0;
   justify-content: center;
-  margin-top: 12px;
 }
-
+.edit-button {
+  width: 100%;
+  justify-content: center;
+}
+.product-buttons {
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+}
 /* ===== PRODUCT PAGE ===== */
 .product-page {
   padding: 40px 0;
@@ -276,10 +283,6 @@ input::placeholder {
   height: fit-content;
 }
 
-.product-right .btn-outline {
-  margin-top: 12px;
-}
-
 
 .product-title {
   margin-top: 0;
@@ -347,6 +350,8 @@ input::placeholder {
   flex-direction: column;
   gap: 6px;
   margin-bottom: 15px;
+  margin-top: 15px;
+  transition: 10s ease-in-out;
 }
 
 .product-edit-wrapper input,
