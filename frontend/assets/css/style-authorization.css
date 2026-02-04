@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   --green: #90C825; 
+  --light-brown: #92897f;
+  --text-brown: #574231; 
   --border-color: #F0EBE5;
   font-family: 'Inter', sans-serif;
 }
@@ -74,14 +76,15 @@ input:focus {
   cursor: pointer;
 }
 
-.password-field .eye img {
+.password-field .eye svg {
+  color: var(--light-brown);
   width: 24px;
-  height: 20px;
-  opacity: 0.6;
+  height: 24px;
+  opacity: 1;
 }
 
-.password-field .eye img:hover {
-  opacity: 1;
+.password-field .eye svg:hover {
+  color: var(--text-brown);
 }
 
 /* Кнопка */
@@ -132,16 +135,16 @@ input:focus {
   gap: 16px;
 }
 
-.socials img {
+.socials svg {
   width: 32px;
-  height: auto;
+  height: 32px;
   object-fit: contain;
   cursor: pointer;
   opacity: 0.8;
 }
 
 
-.socials img:hover {
+.socials svg:hover {
   opacity: 1;
 }
 
