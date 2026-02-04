@@ -25,10 +25,10 @@ body {
 }
 .active-form:focus-within,
 .input-block:focus-within {
-  outline: none; /* Убираем стандартную синюю обводку браузера */
-  border-color: var(--green) !important; /* Делаем рамку зеленой */
-  box-shadow: 0 0 0 3px rgba(144, 200, 37, 0.2); /* Добавляем мягкое зеленое свечение */
-  transition: all 0.2s ease-in-out; /* Плавная анимация */
+  outline: none; 
+  border-color: var(--green) !important; 
+  box-shadow: 0 0 0 3px rgba(144, 200, 37, 0.2);
+  transition: all 0.2s ease-in-out; 
 }
 .search-bar:focus-within svg { 
   color: var(--green);
