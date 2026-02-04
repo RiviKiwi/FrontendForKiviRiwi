@@ -1,12 +1,17 @@
 const imageInput = document.getElementById('imageInput');
 const preview = document.getElementById('imagePreview');
+const form = document.querySelector('.create-ad-form');
+
+let uploadedFiles = [];
 
 imageInput.addEventListener('change', () => {
-  Array.from(imageInput.files).forEach(file => {
-    if (!file.type.startsWith('image/')){ return; }
+  const newFiles = Array.from(imageInput.files);
+  
+  newFiles.forEach(file => {
+    if (!file.type.startsWith('image/')) return;
+    uploadedFiles.push(file);
 
     const reader = new FileReader();
-
     reader.onload = e => {
       const wrapper = document.createElement('div');
       wrapper.className = 'image-item';
@@ -17,20 +22,31 @@ imageInput.addEventListener('change', () => {
       const btn = document.createElement('button');
       btn.className = 'remove-btn';
       btn.innerHTML = '&times;';
-      btn.type = "button"; 
+      btn.type = "button";
 
+      // ЛОГИКА УДАЛЕНИЯ
       btn.onclick = () => {
-        wrapper.remove();
+        wrapper.remove(); 
+        uploadedFiles = uploadedFiles.filter(f => f !== file);
+        updateInputFiles();
       };
 
       wrapper.appendChild(img);
       wrapper.appendChild(btn);
       preview.appendChild(wrapper);
     };
-
     reader.readAsDataURL(file);
   });
-  
-  imageInput.value = ''; 
+  imageInput.value = '';
+  updateInputFiles();
 });
+
+function updateInputFiles() {
+  const dataTransfer = new DataTransfer();
+  uploadedFiles.forEach(file => {
+    dataTransfer.items.add(file);
+  });
+  imageInput.files = dataTransfer.files;
+}
+
 
