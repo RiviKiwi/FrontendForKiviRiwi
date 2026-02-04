@@ -324,6 +324,7 @@ input::placeholder {
   align-items: center;
   font-size: 14px;
   color: #777;
+  margin-top: 5px;
 }
 
 .seller-description {
@@ -368,7 +369,19 @@ input::placeholder {
   gap: 15px;
   margin-top: 20px;
 }
-
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+}
+.star-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--green);
+  fill: var(--green);
+  margin-right: 2px;
+}
 .btn-cancel {
   background: #c9b29b;
   color: #fff;
