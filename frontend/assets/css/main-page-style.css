@@ -2,6 +2,7 @@
   --bg-color: #fffdf7;       /* Кремовый фон */
   --green: #90C825;          /* Лаймовый зеленый киви */
   --color-lime-400: #a3e635;
+  --color-lime-600: #65a30d;
   --dark: #2D2C28;     /* Темный цвет для текста и футера */
   --text-brown: #574231;      /* Коричневый цвет */
   --light-brown: #92897f;
@@ -28,6 +29,10 @@ body {
   border-color: var(--green) !important; /* Делаем рамку зеленой */
   box-shadow: 0 0 0 3px rgba(144, 200, 37, 0.2); /* Добавляем мягкое зеленое свечение */
   transition: all 0.2s ease-in-out; /* Плавная анимация */
+}
+.search-bar:focus-within svg { 
+  color: var(--green);
+  transition: 0.3s ease;
 }
 .active-input:focus {
   outline: none;
@@ -66,6 +71,8 @@ body {
   padding: 0 20px;
   box-sizing: border-box;
 }
+
+
 
 .green-text { color: var(--green); }
 
@@ -387,6 +394,19 @@ input::placeholder {
 .account-option:hover {
   background-color: var(--bg-color);
   color: var(--green); 
+}
+.exit-button {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.exit-option {
+  width: 100%;       
+  display: block;    
+}
+.exit-option:hover {
+  color: white;
+  background-color: rgb(255, 142, 142);
 }
 .acc-menu-options {
   display: flex;
