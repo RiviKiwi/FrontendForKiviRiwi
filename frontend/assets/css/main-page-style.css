@@ -18,6 +18,23 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+::selection {
+  background-color: var(--green); /* Цвет фона выделения */
+  color: white;                   
+}
+.active-form:focus-within,
+.input-block:focus-within {
+  outline: none; /* Убираем стандартную синюю обводку браузера */
+  border-color: var(--green) !important; /* Делаем рамку зеленой */
+  box-shadow: 0 0 0 3px rgba(144, 200, 37, 0.2); /* Добавляем мягкое зеленое свечение */
+  transition: all 0.2s ease-in-out; /* Плавная анимация */
+}
+.active-input:focus {
+  outline: none;
+  border-color: var(--green) !important;
+  box-shadow: 0 0 0 3px rgba(126, 194, 0, 0.388);
+  transition: all 0.2s ease-in-out;
+}
 /* Иконки */
 .icon {
   width: 24px;
