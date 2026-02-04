@@ -4,6 +4,7 @@
   --color-lime-400: #a3e635;
   --dark: #2D2C28;     /* Темный цвет для текста и футера */
   --text-brown: #574231;      /* Коричневый цвет */
+  --light-brown: #92897f;
   --border-color: #F0EBE5;  /* Цвет границ */
   --transparent-brown: #44342395; /* Коричневый прозрачный цвет */
 }
@@ -17,7 +18,29 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
+/* Иконки */
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+}
+.views-icon {
+  width: 17px;
+  height: 17px;
+}
+.favorite-icon {
+  color:var(--green);
+  width: 25px;
+  height: 25px;
+}
+.header-location-icon {
+  width: 20px;
+  height: 20px;
+}
+.search-icon {
+  color: var(--light-brown);
+}
 .container {
   width: 100%;
   max-width: 1200px;
@@ -117,7 +140,7 @@ input::placeholder {
   max-width: 200px; 
   align-items: center;
   white-space: nowrap;
-  gap: 5px;
+  gap: 2px;
 }
 .location-text {
   white-space: nowrap;
@@ -139,8 +162,12 @@ input::placeholder {
   display: flex;
   gap: 15px;
 }
-.add-icon-wrapper{
+.add-icon-wrapper {
   display: flex;
+}
+.log-in-icon {
+  transform: translateX(-5px);
+  margin-right: -7px;
 }
 .btn {
   padding: 10px 20px;
@@ -286,16 +313,20 @@ input::placeholder {
 }
 /* Account */
 .account-wrapper {
+  width: 45px;
+  height: 45px;
   cursor:pointer;
   position: relative;
-  border-radius: 100px;
+  border-radius: 50%;
   display: flex;           
   justify-content: center; 
   align-items: center; 
-  width: 45px;
-  aspect-ratio: 1;
+  color:white;
   stroke: white;
   background-color: var(--green);
+}
+.acc-icon {
+  width: 24px;
 }
 .account-dropdown {
   display: none;
@@ -537,7 +568,7 @@ input::placeholder {
   font-weight: bold;
   margin-bottom: 5px;
 }
-.location-icon {
+.product-location-icon {
   width: 15px;
 }
 .product-location {
@@ -566,7 +597,7 @@ input::placeholder {
 .product-views {
   margin-top: 5px;
   display: flex;
-  gap:3px;
+  gap:2px;
   align-items: center;
   font-size:14px;
   word-break: break-word;

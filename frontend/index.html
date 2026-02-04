@@ -30,16 +30,17 @@
                 </a>
                 <!-- Поиск -->
                 <form class="search-bar">
-                    <img src="assets/images/icons/search-icon.svg">
+                    <svg class="icon search-icon">
+                        <use href="assets/images/icons/icons.svg#search-icon"></use>
+                    </svg>
                     <input type="text" placeholder="Что вы ищете?" id="search-bar">
                     <button type="submit" class="btn-search btn-primary">Найти</button>
                 </form>
                 <div class="location-wrapper">
                         <div class="location" onclick="toggleCityMenu(event)" style="cursor: pointer;">
-                            <span class="location-icon"><svg width="13" height="17" viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 6.69532C1 10.6869 4.33497 13.9876 5.81112 15.2532C6.0224 15.4343 6.12926 15.526 6.28687 15.5724C6.4096 15.6086 6.59024 15.6086 6.71297 15.5724C6.8709 15.5259 6.97705 15.4351 7.18912 15.2533C8.66525 13.9878 12 10.6872 12 6.69569C12 5.18514 11.4206 3.73629 10.3891 2.66817C9.3577 1.60006 7.95881 1 6.50012 1C5.04143 1 3.64238 1.60015 2.61092 2.66826C1.57947 3.73638 1 5.18478 1 6.69532Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4.3 6.6151C4.3 7.85561 5.28494 8.86118 6.5 8.86118C7.71506 8.86118 8.7 7.85561 8.7 6.6151C8.7 5.37462 7.71506 4.36902 6.5 4.36902C5.28494 4.36902 4.3 5.37462 4.3 6.6151Z"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg></span>
+                            <svg class="icon header-location-icon">
+                                <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                            </svg>
                             <span class="location-text">
                                 <a class="current-city">Минск</a>
                             </span>
@@ -56,14 +57,16 @@
                 <!-- Кнопки -->
                 <div class="header-actions">
                     <button class="btn btn-outline">
-                        <span class="add-icon-wrapper"><svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.44141 0C9.99345 0.000164811 10.4412 0.44796 10.4414 1V8.14062H17.8916C18.4436 8.14094 18.8916 8.58856 18.8916 9.14062C18.8916 9.69272 18.4436 10.1403 17.8916 10.1406H10.4414V17.2734C10.4412 17.8255 9.99344 18.2733 9.44141 18.2734C8.88923 18.2734 8.44158 17.8256 8.44141 17.2734V10.1406H1C0.447715 10.1406 2.50583e-08 9.69291 0 9.14062C2.99006e-05 8.58837 0.447734 8.14062 1 8.14062H8.44141V1C8.44157 0.447858 8.88923 -2.32531e-08 9.44141 0Z"/>
-                        </svg></span>
+                        <span class="add-icon-wrapper">
+                            <svg class="icon add-icon">
+                                <use href="assets/images/icons/icons.svg#plus-icon"></use>
+                            </svg>
+                        </span>
                         <a href="create-ad.html" class="create-ad-link">Добавить объявление</a>
                     </button>
                     <div class="account-wrapper" onclick="showAccountMenu()">
-                        <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 17C14 13.5636 11.0899 10.7778 7.5 10.7778C3.91015 10.7778 1 13.5636 1 17M7.5 8.11111C5.44866 8.11111 3.78571 6.51924 3.78571 4.55556C3.78571 2.59188 5.44866 1 7.5 1C9.55131 1 11.2143 2.59188 11.2143 4.55556C11.2143 6.51924 9.55131 8.11111 7.5 8.11111Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg class="icon">
+                            <use href="assets/images/icons/icons.svg#user-icon-round"></use>
                         </svg>
                         <div class="account-dropdown" id="accountDropdown">
                             <span class="account-name">
@@ -79,8 +82,8 @@
                         </div>
                     </div>
                     <a href="login.html" class="btn btn-primary">
-                        <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 17C14 13.5636 11.0899 10.7778 7.5 10.7778C3.91015 10.7778 1 13.5636 1 17M7.5 8.11111C5.44866 8.11111 3.78571 6.51924 3.78571 4.55556C3.78571 2.59188 5.44866 1 7.5 1C9.55131 1 11.2143 2.59188 11.2143 4.55556C11.2143 6.51924 9.55131 8.11111 7.5 8.11111Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg class="icon log-in-icon">
+                            <use href="assets/images/icons/icons.svg#log-in-icon"></use>
                         </svg>
                         <span>Войти</span>
                     </a>
@@ -116,7 +119,6 @@
 
         <!-- Сетка: Сайдбар + Товары -->
         <div class="main-layout">
-            <!-- !ПОСЛЕДНИЕ ИЗМЕНЕНИЯ! -->
             <!-- Левая колонка (Фильтры) -->
             <aside class="sidebar">
                 <div class="filter price-filter">
@@ -150,11 +152,8 @@
                 <div class="catalog-header">
                     <h2>Рекомендации для Вас</h2>
                     <button class="sort-button" onclick="toggleSortMenu()">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M7 4V20"/>
-                            <path d="M17 19L17 4"/>
-                            <path d="M10 6.99998C10 6.99998 7.79053 4.00001 6.99998 4C6.20942 3.99999 4 7 4 7"/>
-                            <path d="M20 17C20 17 17.7905 20 17 20C16.2094 20 14 17 14 17"/>
+                        <svg class="icon">
+                            <use href="assets/images/icons/icons.svg#up-down-arrows-icon"></use>
                         </svg>
                         <span id="currentSort">Сначала новые</span>
                     </button>
@@ -167,25 +166,31 @@
                 <div class="products-grid">
                     <!-- !ПОСЛЕДНИЕ ИЗМЕНЕНИЯ! -->
                     <!-- Карточка 1 -->
-                    <a href="#" class="product-card">
+                    <a href="product-card.html" class="product-card">
                         <div class="image-placeholder gradient-green">
-                            <img src="assets/images/log-background.svg">
+                            <img src="assets/images/products/enduro.jpg">
                         </div>
                         <div class="card-info">
                             <div class="card-header">
-                                <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <p class="text-line medium">Эндуро 250</p>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
-                            <div class="product-price">30000 - 50000$</div>
+                            <div class="product-price">52000 ₽</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
                                     <p id="views-numb">123000</p>
                                 </div>
                             </div>
@@ -199,18 +204,24 @@
                         <div class="card-info">
                             <div class="card-header">
                                 <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
                                     <p id="views-numb">123000</p>
                                 </div>
                             </div>
@@ -224,19 +235,25 @@
                         <div class="card-info">
                             <div class="card-header">
                                 <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
-                                    <p id="views-numb">3000</p>
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
+                                    <p id="views-numb">123000</p>
                                 </div>
                             </div>
                         </div>
@@ -249,19 +266,25 @@
                         <div class="card-info">
                             <div class="card-header">
                                 <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
-                                    <p id="views-numb">13000</p>
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
+                                    <p id="views-numb">123000</p>
                                 </div>
                             </div>
                         </div>
@@ -273,19 +296,25 @@
                         <div class="card-info">
                             <div class="card-header">
                                 <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
-                                    <p id="views-numb">1</p>
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
+                                    <p id="views-numb">123000</p>
                                 </div>
                             </div>
                         </div>
@@ -297,19 +326,25 @@
                         <div class="card-info">
                             <div class="card-header">
                                 <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
-                                    <p id="views-numb">123</p>
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
+                                    <p id="views-numb">123000</p>
                                 </div>
                             </div>
                         </div>
@@ -321,19 +356,25 @@
                         <div class="card-info">
                             <div class="card-header">
                                 <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
-                                    <p id="views-numb">1230</p>
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
+                                    <p id="views-numb">123000</p>
                                 </div>
                             </div>
                         </div>
@@ -345,19 +386,25 @@
                         <div class="card-info">
                             <div class="card-header">
                                 <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
-                                    <p id="views-numb">12300</p>
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
+                                    <p id="views-numb">123000</p>
                                 </div>
                             </div>
                         </div>
@@ -369,18 +416,24 @@
                         <div class="card-info">
                             <div class="card-header">
                                 <p class="text-line medium">Тралалелололаоллолололооллолололололололололоолололол</p>
-                                <button class="favorite-button" onclick="markFavorite(this, event)"><svg width="24" height="21" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.6851 2.63897L11 3.3415L10.315 2.63898C8.18404 0.453692 4.72912 0.45369 2.5982 2.63898C0.5245 4.76559 0.460783 8.19279 2.45393 10.3989L8.18026 16.7371C9.70154 18.421 12.2984 18.421 13.8197 16.7371L19.5461 10.3989C21.5392 8.19277 21.4755 4.76557 19.4018 2.63896C17.2709 0.453677 13.816 0.453679 11.6851 2.63897Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></button>
+                                <button class="favorite-button" onclick="markFavorite(this, event)">
+                                    <svg class="icon favorite-icon">
+                                        <use href="assets/images/icons/icons.svg#heart-icon"></use>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="product-price">30000 - 50000$</div>
                             <div class="product-bottom-info">
                                 <div class="product-location">
-                                    <i class="location-icon" data-lucide="map-pin"></i>
+                                    <svg class="icon product-location-icon">
+                                        <use href="assets/images/icons/icons.svg#map-pin-icon"></use>
+                                    </svg>
                                     Минск
                                 </div>
                                 <div class="product-views">
-                                    <img src="assets/images/icons/opened-eye.svg" height="15px" width="15px">
+                                    <svg class="icon views-icon">
+                                        <use href="assets/images/icons/icons.svg#open-eye-icon"></use>
+                                    </svg>
                                     <p id="views-numb">123000</p>
                                 </div>
                             </div>
@@ -390,7 +443,11 @@
                 <!-- ПАГИНАЦИЯ -->
                 <nav class="pagination">
 
-                <a href="?page=1" class="page-btn disabled">←</a>
+                <a href="?page=1" class="page-btn disabled">
+                    <svg class="icon">
+                        <use href="assets/images/icons/icons.svg#chevron-left-icon"></use>
+                    </svg>
+                </a>
 
                 <a href="?page=1" class="page-btn active">1</a>
                 <a href="?page=2" class="page-btn">2</a>
@@ -402,7 +459,11 @@
 
                 <a href="?page=10" class="page-btn">10</a>
 
-                <a href="?page=2" class="page-btn">→</a>
+                <a href="?page=2" class="page-btn">
+                    <svg class="icon">
+                        <use href="assets/images/icons/icons.svg#chevron-right-icon"></use>
+                    </svg>
+                </a>
 
                 </nav>
             </div>
@@ -452,9 +513,21 @@
                 <div>
                     <h4 class="footer-title">Мы в соцсетях</h4>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i data-lucide="instagram"></i></a>
-                        <a href="#" class="social-icon"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="social-icon"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon">
+                            <svg class="icon">
+                                <use href="assets/images/icons/icons.svg#insta-logo"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <svg class="icon">
+                                <use href="assets/images/icons/icons.svg#facebook-logo"></use>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/RiviKiwi" class="social-icon">
+                            <svg class="icon">
+                                <use href="assets/images/icons/icons.svg#github-logo"></use>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
