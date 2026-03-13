@@ -66,7 +66,6 @@ body {
 .container {
   width: 100%;
   max-width: 1200px;
-  min-width: 910px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -137,7 +136,9 @@ input::placeholder {
   min-width: 150px;
   z-index: 1000;   
   padding: 5px 0;
-  margin-top: 10px; 
+  margin-top: 10px;
+  list-style: none;
+  margin-left: 0;
 }
 
 .city-dropdown.show {
@@ -161,10 +162,15 @@ input::placeholder {
   color: var(--text-brown);
   stroke: var(--text-brown);
   display: flex;
-  max-width: 200px; 
+  max-width: 200px;
   align-items: center;
   white-space: nowrap;
   gap: 2px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
 }
 .location-text {
   white-space: nowrap;
@@ -339,13 +345,16 @@ input::placeholder {
 .account-wrapper {
   width: 45px;
   height: 45px;
-  cursor:pointer;
+  min-width: 45px;
+  min-height: 45px;
+  flex-shrink: 0;
+  cursor: pointer;
   position: relative;
   border-radius: 50%;
   display: flex;           
   justify-content: center; 
   align-items: center; 
-  color:white;
+  color: white;
   stroke: white;
   background-color: var(--green);
 }
@@ -486,10 +495,13 @@ input::placeholder {
 }
 .catalog-header {
   display: flex;
-  justify-content: space-between; 
-  align-items: center;            
-  margin-bottom: 20px;            
-  position: relative;             
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort-wrapper {
+  position: relative;
 }
 
 .catalog-header h2 {
@@ -528,6 +540,8 @@ input::placeholder {
   padding: 5px 0;
   z-index: 100;
   min-width: 180px;
+  list-style: none;
+  margin: 0;
 }
 
 .sort-dropdown.show { display: block; }
@@ -547,7 +561,6 @@ input::placeholder {
 }
 
 .product-card {
-  width: 187px;
   background: white;
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -1006,7 +1019,10 @@ input::placeholder {
 }
 
 .create-ad-link {
-  color:#2D2C28;
+  color: var(--dark);
+}
+.btn-outline:hover .create-ad-link {
+  color: white;
 }
 
 /* ===== PROFILE EDIT ===== */
@@ -1168,4 +1184,169 @@ input::placeholder {
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   display: none;
   z-index: 999;
+}
+
+/* ───────────────────────────────────────────
+   АДАПТИВНОСТЬ
+   Breakpoints:
+     ≤1024px  — планшет (tablet)
+     ≤768px   — мобильный (mobile)
+     ≤480px   — маленький экран (small)
+─────────────────────────────────────────── */
+
+/* Кнопка «Фильтры» — только на мобильных */
+.filter-toggle-btn {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* ── Tablet ≤1024px ── */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-section {
+    padding: 40px 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  /* Скрыть строку поиска в хедере — переедет на мобиле */
+  .search-bar {
+    max-width: 400px;
+  }
+}
+
+/* ── Mobile ≤768px ── */
+@media (max-width: 768px) {
+  /* Хедер */
+  .header-top {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .search-bar {
+    order: 3;          /* Уходит на вторую строку */
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .location-wrapper {
+    display: none;     /* Прячем на мобиле — экономим место */
+  }
+
+  .btn-outline .create-ad-link {
+    display: none;     /* Только иконка «+» */
+  }
+
+  .btn-outline {
+    padding: 10px 12px;
+  }
+
+  /* Навигация категорий */
+  .header-bottom {
+    scrollbar-width: none; /* Firefox */
+  }
+  .header-bottom::-webkit-scrollbar {
+    display: none;         /* Chrome/Safari */
+  }
+
+  /* Hero */
+  .hero-section {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  /* Главный layout: сайдбар сворачивается */
+  .main-layout {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 20px;
+  }
+
+  /* Кнопка «Фильтры» */
+  .filter-toggle-btn {
+    display: flex;
+  }
+
+  /* Сайдбар скрыт по умолчанию, раскрывается через JS */
+  .sidebar {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 30px;
+    border: none;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .sidebar.sidebar--open {
+    max-height: 600px;
+    padding: 20px 30px;
+    border: 2px solid var(--border-color);
+    margin-bottom: 20px;
+  }
+
+  /* Грид товаров */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  /* Карточки */
+  .catalog-header h2 {
+    font-size: 18px;
+  }
+
+  /* Пагинация */
+  .page-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+}
+
+/* ── Small ≤480px ── */
+@media (max-width: 480px) {
+  .header-top {
+    gap: 8px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 20px;
+  }
+
+  .hero-section {
+    padding: 24px 16px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Скрыть часть пагинации, оставить только стрелки и активную */
+  .page-btn:not(.active):not([href*="page=1"]):not([href*="page=2"]):not(:first-child):not(:last-child) {
+    display: none;
+  }
+  .page-dots {
+    display: none;
+  }
+
+  .footer .grid-4 {
+    gap: 30px;
+  }
 }

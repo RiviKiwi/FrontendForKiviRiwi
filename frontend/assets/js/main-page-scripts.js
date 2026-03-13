@@ -1,114 +1,115 @@
-/* Местоположение */
-function toggleCityMenu(event) {
-    if (event) {
-        event.preventDefault(); 
-        event.stopPropagation(); 
-    }
-    const dropdown = document.getElementById('cityDropdown');
-    dropdown.classList.toggle('show');
-}
-
-function selectCity(cityName,event) {
-    if (event) {
-        event.preventDefault(); 
-        event.stopPropagation(); 
-    }
-    document.querySelector('.current-city').innerText = cityName;
-    document.getElementById('cityDropdown').classList.remove('show');
-}
-
-window.onclick = function(event) {
-    if (!event.target.closest('.location-wrapper')) {
-      const dropdown = document.getElementById('cityDropdown');
-      if (dropdown && dropdown.classList.contains('show')) {
-        dropdown.classList.remove('show');
-      }
-    }
-}
-
-/* Категории товаров */
 document.addEventListener('DOMContentLoaded', () => {
-  const navContainer = document.querySelector('.categories-container');
-  navContainer.addEventListener('click', (event) => {
-    const clickedLink = event.target.closest('.cat-link');
-    
-    if (clickedLink) {
-      event.preventDefault();
-      document.querySelectorAll('.cat-link').forEach(link => link.classList.remove('active'));
-      clickedLink.classList.add('active');
-    }
-  });
-  
-});
-/* Сортировка товаров */
-function toggleSortMenu() {
-    document.getElementById('sortDropdown').classList.toggle('show');
-}
 
-function selectSort(sortName) {
-    document.getElementById('currentSort').innerText = sortName;
-    document.getElementById('sortDropdown').classList.remove('show');
-    console.log("Выбрана сортировка:", sortName);
-}
-/* Меню профиля в углу */
-function showAccountMenu() {
-    const dropdown = document.getElementById('accountDropdown');
-    dropdown.classList.toggle('show');
-}
-window.onclick = function(event) {
-    if (!event.target.closest('.location-wrapper')) {
-        const cityDrop = document.getElementById('cityDropdown');
-        if (cityDrop && cityDrop.classList.contains('show')) {
-            cityDrop.classList.remove('show');
+    /* ── Категории ── */
+    const navContainer = document.querySelector('.categories-container');
+    if (navContainer) {
+        navContainer.addEventListener('click', (e) => {
+            const clicked = e.target.closest('.cat-link');
+            if (!clicked) return;
+            e.preventDefault();
+            navContainer.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
+            clicked.classList.add('active');
+        });
+    }
+
+    /* ── Город ── */
+    const locationWrapper = document.querySelector('.location-wrapper');
+    if (locationWrapper) {
+        locationWrapper.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            document.getElementById('cityDropdown').classList.toggle('show');
+        });
+
+        document.querySelectorAll('.city-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                document.querySelector('.current-city').textContent = option.dataset.city;
+                document.getElementById('cityDropdown').classList.remove('show');
+            });
+        });
+    }
+
+    /* ── Сортировка ── */
+    const sortButton = document.querySelector('.sort-button');
+    if (sortButton) {
+        sortButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.getElementById('sortDropdown').classList.toggle('show');
+        });
+
+        document.querySelectorAll('.sort-option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.getElementById('currentSort').textContent = option.textContent;
+                document.getElementById('sortDropdown').classList.remove('show');
+            });
+        });
+    }
+
+    /* ── Меню аккаунта ── */
+    const accountWrapper = document.querySelector('.account-wrapper');
+    if (accountWrapper) {
+        accountWrapper.addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.getElementById('accountDropdown').classList.toggle('show');
+        });
+    }
+
+    /* ── Закрытие всех дропдаунов по клику вне ── */
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.location-wrapper')) {
+            document.getElementById('cityDropdown')?.classList.remove('show');
         }
-    }
-    if (!event.target.closest('.sort-button') && !event.target.closest('.sort-dropdown')) {
-        const sortDrop = document.getElementById('sortDropdown');
-        if (sortDrop && sortDrop.classList.contains('show')) {
-            sortDrop.classList.remove('show');
+        if (!e.target.closest('.sort-button') && !e.target.closest('.sort-dropdown')) {
+            document.getElementById('sortDropdown')?.classList.remove('show');
         }
+        if (!e.target.closest('.account-wrapper')) {
+            document.getElementById('accountDropdown')?.classList.remove('show');
+        }
+    });
+
+    /* ── Фильтр цены ── */
+    const fromInput = document.getElementById('price-from');
+    const toInput   = document.getElementById('price-to');
+    if (fromInput && toInput) {
+        fromInput.addEventListener('input', function () {
+            toInput.min = this.value;
+            if (toInput.value && parseFloat(toInput.value) < parseFloat(this.value)) {
+                toInput.value = this.value;
+            }
+        });
     }
-    window.onclick = function(event) {
-    if (!event.target.closest('.account-wrapper')) {
-      const dropdown = document.getElementById('accountDropdown');
-      if (dropdown.classList.contains('show')) {
-        dropdown.classList.remove('show');
-      }
+
+    /* ── Избранное ── */
+    document.querySelectorAll('.favorite-button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            btn.classList.toggle('favorite-product');
+        });
+    });
+
+    /* ── Мобильный фильтр: показать/скрыть сайдбар ── */
+    const filterToggle = document.getElementById('filter-toggle');
+    const sidebar      = document.querySelector('.sidebar');
+    if (filterToggle && sidebar) {
+        filterToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar--open');
+            filterToggle.setAttribute(
+                'aria-expanded',
+                sidebar.classList.contains('sidebar--open')
+            );
+        });
     }
-}
-}
 
-const fromInput = document.getElementById('price-from');
-const toInput = document.getElementById('price-to');
+    /* ── Форматирование просмотров ── */
+    const formatter = new Intl.NumberFormat('ru-RU', {
+        notation: 'compact',
+        maximumFractionDigits: 1,
+    });
+    document.querySelectorAll('.product-views [data-views]').forEach(el => {
+        const val = parseInt(el.dataset.views, 10);
+        if (!isNaN(val)) el.textContent = formatter.format(val).toLowerCase();
+    });
 
-fromInput.addEventListener('input', function() {
-    toInput.min = this.value;
-    
-    if (toInput.value && parseFloat(toInput.value) < parseFloat(this.value)) {
-        toInput.value = this.value; 
-    }
-});
-
-function markFavorite(button,event) {
-    button.classList.toggle('favorite-product');
-    event.preventDefault();
-    event.stopPropagation();
-    if (button.classList.contains('favorite-product')) {
-        console.log("Добавлено в избранное");
-    } else {
-        console.log("Удалено из избранного");
-    }
-}
-
-const viewElements = document.querySelectorAll('.product-views p');
-const formatter = new Intl.NumberFormat('en-US', {
-notation: "compact",
-maximumFractionDigits: 1
-});
-
-viewElements.forEach(el => {
-const originalValue = parseInt(el.textContent.replace(/\s/g, ''));
-if (!isNaN(originalValue)) {
-    el.textContent = formatter.format(originalValue).toLowerCase(); 
-}
 });
